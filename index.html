@@ -1,0 +1,1316 @@
+<!doctype html>
+<html lang="id">
+ <head>
+  <script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260717-05-8209e4e"}');</script>
+  <script src="/_sdk/f432b76fb310b513.telemetry_sdk.js" integrity="sha512-9FJQ55EKmmqhyyik8BhrMVfm0+iYYfb8uOlRsjtkxJMEI97qOVEI4PnHohDjQAtvAep0IOEpdQ64eki0sz62ug=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Tes Psikologi Koran TNI</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/e3937a0574eb2d69.data_sdk.js" integrity="sha512-xbp/ACqEQy1aDxYMtXTrR3y5MUbzxuggRR/9sD48Gl4VhLMMCiAHsxMaFV6DTdeBpR6ymF+t2zhPKYkWM3+Jfw=="></script>
+  <script src="/_sdk/b7bbbe551ba4f8f5.editing_sdk.js" integrity="sha512-h06pMz6KcVo4Wjvoggb4sS5DZpb55bTriAzBmA0YwbkBA3z2ZXl8CBEbCWT+/fAsm0SwDejJ7jJHOZsLZKqPoQ=="></script>
+  <script src="/_sdk/9432170dbd2ae0df.resizing_sdk.js" integrity="sha512-FeT+58sb1f9ejWPWFjCbJvTT+SDwGV+ngrHUnlO7TWEOoqwOLj6p256kO3vOL7DIWl1cIgrobiof8v2bOigwPg=="></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy: #0a192f;
+      --navy-light: #112240;
+      --navy-dark: #020c1b;
+      --orange: #f97316;
+      --orange-hover: #ea580c;
+      --white: #ffffff;
+      --black: #050811;
+      --muted: #94a3b8;
+      --line: #1e293b;
+      --danger: #ef4444;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:"DM Sans",sans-serif;color:var(--white);background-color:var(--black);overflow-x:hidden}
+    button,input,select{font:inherit}
+    button{touch-action:manipulation}
+    .app-shell{width:100%;min-height:calc(100 * min(var(--vh,1vh),1vh));background-color:var(--black);background-image:linear-gradient(rgba(249,115,22,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(249,115,22,.03) 1px,transparent 1px);background-size:34px 34px}
+    .view{display:none}
+    .view.active{display:block;}
+    
+    /* Login dibuat flex column */
+    .login-view.active{display:flex; flex-direction:column; justify-content:space-between; align-items:center; min-height: 100vh;}
+    @keyframes reveal{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+    
+    /* UI Elements */
+    .tactical{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(circle at 82% 8%,rgba(249,115,22,.15),transparent 30%),linear-gradient(145deg,var(--navy-light),var(--black) 78%)}
+    .tactical:before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to right,#000,transparent)}
+    .tactical:after{content:"";position:absolute;z-index:-1;width:340px;height:340px;right:-150px;bottom:-150px;border:1px solid rgba(249,115,22,.25);border-radius:50%;box-shadow:0 0 0 42px rgba(249,115,22,.03),0 0 0 84px rgba(249,115,22,.015)}
+    
+    /* Background Login Overlay */
+    .login-overlay{
+        position:absolute;inset:0;z-index:0;
+        background-color:var(--black);
+        background-size:cover !important;
+        background-position:center !important;
+        background-attachment:fixed !important;
+        transition: background-image 0.5s ease-in-out;
+    }
+    
+    .glass{background:rgba(10,25,47,.85);border:1px solid rgba(249,115,22,.2);box-shadow:0 30px 90px rgba(0,0,0,.6);backdrop-filter:blur(18px)}
+    .topbar{background:rgba(5,8,17,.96);color:var(--white);border-bottom:1px solid rgba(249,115,22,.2);backdrop-filter:blur(16px)}
+    .brand-logo{object-fit:cover;background:#fff;border:1px solid rgba(255,255,255,.25)}
+    .field{width:100%;border:1px solid var(--line);background:var(--navy-light);color:var(--white);border-radius:10px;padding:13px 14px;outline:none;transition:.2s}
+    .field:focus{border-color:var(--orange);box-shadow:0 0 0 4px rgba(249,115,22,.2)}
+    .btn-primary,.btn-accent,.btn-ghost,.btn-danger{border-radius:10px;padding:11px 16px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.18s;border:1px solid transparent}
+    .btn-primary{background:var(--orange);color:var(--white);box-shadow:0 8px 18px rgba(249,115,22,.25)}
+    .btn-accent{background:var(--navy-light);color:var(--white);border-color:var(--orange)}
+    .btn-ghost{background:transparent;color:var(--white);border-color:var(--line)}
+    .btn-danger{background:rgba(239,68,68,.15);color:var(--danger);border-color:rgba(239,68,68,.3)}
+    .btn-primary:hover{background:var(--orange-hover);transform:translateY(-2px)}
+    .btn-accent:hover,.btn-ghost:hover{background:rgba(255,255,255,.05);transform:translateY(-2px)}
+    .btn-danger:hover{background:rgba(239,68,68,.25);transform:translateY(-2px)}
+    button:disabled{opacity:.52;cursor:not-allowed;transform:none!important}
+    button:focus-visible,input:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+    .card{background:var(--navy-light);border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 38px rgba(0,0,0,.3);color:var(--white)}
+    .card-dark{background:var(--navy);color:var(--white);border:1px solid var(--line)}
+    .stat-card{position:relative;overflow:hidden}
+    .stat-card:after{content:"";position:absolute;width:80px;height:80px;border:1px solid rgba(249,115,22,.15);border-radius:50%;right:-28px;bottom:-30px}
+    .stat-icon{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;background:var(--black);color:var(--orange)}
+    .chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:5px 10px;background:rgba(249,115,22,.12);color:var(--orange);border:1px solid rgba(249,115,22,.2);font-size:12px;font-weight:800;letter-spacing:.02em}
+    .admin-tab{transition:.2s;color:var(--muted)}
+    .admin-tab[aria-selected=true]{background:var(--orange);color:var(--white)}
+    .admin-panel{display:none}.admin-panel.active{display:block;animation:reveal .3s ease both}
+    .empty{border:1px dashed var(--line);background:rgba(255,255,255,.02);border-radius:12px}
+    .package-card{transition:.2s;background:var(--navy-light);border:1px solid var(--line)}.package-card:hover{border-color:var(--orange);transform:translateY(-3px)}
+    .check-row{display:flex;align-items:center;gap:10px;padding:11px 12px;border:1px solid var(--line);border-radius:999px;background:var(--black);color:var(--white)}
+    .check-row input{width:18px;height:18px;accent-color:var(--orange)}
+    .score-ring{width:92px;height:92px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--orange) calc(var(--score)*1%),var(--line) 0);position:relative}
+    .score-ring:after{content:"";position:absolute;inset:8px;border-radius:50%;background:var(--navy-light)}
+    .score-ring strong{position:relative;z-index:1;font-size:23px;color:var(--white)}
+    
+    /* Koran Grid & Auto-tracking Keypad Styling */
+    .exam-bg{min-height:calc(100 * min(var(--vh,1vh),1vh));background:var(--black); color: var(--white);}
+    .exam-topbar{background:var(--navy); color:var(--white); padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--orange); position: sticky; top: 0; z-index: 100;}
+    .koran-grid-container {
+      display: flex; gap: 40px; overflow-x: auto; overflow-y: auto; padding: 30px 40px 240px 40px; width: 100%; height: calc(100vh - 68px);
+      scroll-behavior: auto; /* OPTIMIZED: Auto behavior prevents scroll lag on fast typing */
+    }
+    .koran-col {
+      position: relative; padding-top: 10px; width: 60px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center;
+      border-right: 1px dashed var(--line);
+    }
+    .koran-col.active-col { border-right: 1px dashed var(--orange); background: linear-gradient(180deg, rgba(249,115,22,0.05) 0%, transparent 100%); }
+    
+    .koran-digit { 
+        font-size: 24px; font-weight: 800; color: var(--muted); height: 42px; line-height: 42px; width: 100%; text-align: center; z-index: 2; position: relative;
+        transition: opacity 0.1s ease, transform 0.1s ease, color 0.1s ease; /* OPTIMIZED: Faster transition */
+        opacity: 0.3;
+    }
+    .koran-digit.focused { 
+        opacity: 1; 
+        color: var(--white); 
+        transform: scale(1.15); 
+    }
+    
+    .koran-answer { position: absolute; left: 40px; font-size: 17px; font-weight: 800; height: 42px; line-height: 42px; display: flex; align-items: center; z-index: 3;}
+    .koran-answer.correct { color: #10b981; }
+    .koran-answer.wrong { color: #ef4444; }
+    
+    .koran-active-box { 
+        position: absolute; 
+        left: 50%; 
+        transform: translateX(-50%);
+        width: 50px; 
+        height: 84px; 
+        border: 3px solid var(--orange); 
+        border-radius: 10px; 
+        background: rgba(249, 115, 22, 0.15); 
+        z-index: 1; 
+        transition: top 0.1s ease-out; /* OPTIMIZED: Snappier transition */
+        box-shadow: 0 4px 16px rgba(249, 115, 22, 0.35); 
+    }
+    
+    #floating-keypad {
+        position: fixed; z-index: 50;
+        background: var(--navy-light); border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.6); width: 220px; overflow: hidden;
+        border: 1px solid var(--line); touch-action: none;
+        transition: top 0.15s ease-out, left 0.15s ease-out;
+    }
+    .keypad-header {
+        background: var(--orange); color: white; padding: 8px; text-align: center; font-size: 11px; font-weight: 800; letter-spacing: 0.1em;
+        display: flex; justify-content: center; align-items: center; gap: 6px; cursor: default;
+    }
+    .keypad-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding: 12px;}
+    .keypad-btn{background:var(--navy);color:var(--white);border:1px solid var(--line);border-radius:8px;padding:12px;font-size:20px;font-weight:800;cursor:pointer;transition:.1s;}
+    .keypad-btn:hover{border-color:var(--orange)}
+    .keypad-btn:active{background:var(--orange);transform:scale(0.95)}
+    .keypad-btn-zero{grid-column:2}
+
+    .toast{position:fixed;right:18px;bottom:18px;z-index:100;max-width:370px;padding:14px 16px;border-radius:10px;background:var(--navy-light);color:var(--white);border-left:4px solid var(--orange);box-shadow:0 20px 48px rgba(0,0,0,.5);transform:translateY(24px);opacity:0;pointer-events:none;transition:.25s}
+    .toast.show{transform:none;opacity:1}.toast.error{background:#3b1212;border-color:#ef4444}
+    .modal{position:fixed;inset:0;z-index:90;background:rgba(5,8,17,.85);display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(7px)}
+    .modal.open{display:flex}.modal-card{width:min(540px,100%);max-height:90%;overflow:auto;background:var(--navy-light);color:var(--white);border-radius:18px;padding:27px;border-top:5px solid var(--orange);box-shadow:0 28px 90px rgba(0,0,0,.6)}
+    .loading{animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+    .chart-grid line{stroke:var(--line)}.chart-area{fill:rgba(249,115,22,0.15)}.chart-line{fill:none;stroke:var(--orange);stroke-width:4}.chart-dot{fill:var(--white);stroke:var(--orange);stroke-width:3}
+    .eyebrow{letter-spacing:.16em;text-transform:uppercase}
+    
+    @media(max-width:767px){
+      .exam-topbar{padding: 10px 16px;}
+      .koran-grid-container { padding: 20px 20px 260px 20px; gap: 24px; }
+      #floating-keypad { top: auto !important; left: 50% !important; bottom: 20px !important; transform: translateX(-50%) !important; position: fixed !important; }
+      .keypad-header { cursor: default; }
+      .hide-mobile { display:none; }
+    }
+  </style>
+ </head>
+ <body data-template-id="__page-root">
+  <div class="app-shell w-full">
+   <!-- VIEW: LOGIN -->
+   <section id="login-view" class="view login-view active relative tactical w-full py-8 px-4" aria-labelledby="login-title">
+    <div class="login-overlay absolute inset-0 z-0"></div>
+    
+    <!-- Bagian Atas / Header Login -->
+    <div class="relative z-10 w-full max-w-md flex flex-col items-center justify-center pt-4">
+      <div class="flex flex-col items-center text-center text-white mb-6">
+        <img id="login-logo" loading="lazy" class="w-[80px] h-[80px] object-cover rounded-2xl bg-white border border-white/20 shadow-2xl mb-4" alt="Logo Aplikasi">
+        <span class="canva-tag inline-flex rounded-full px-3 py-1 eyebrow bg-orange-500/20 text-orange-400 mb-2 text-xs border border-orange-500/30 tracking-[.25em]">Welcome to</span>
+        <h1 id="login-title" class="canva-text font-extrabold text-2xl md:text-3xl text-white leading-tight"></h1>
+        <p id="login-subtitle" class="canva-text mt-2 text-slate-300 text-xs md:text-sm max-w-[320px]"></p>
+      </div>
+    </div>
+
+    <!-- Bagian Tengah: Login Siswa (Utama) -->
+    <div class="relative z-10 w-full max-w-md my-auto">
+      <main class="glass w-full rounded-[20px] p-6 md:p-8 shadow-2xl border border-orange-500/30">
+        <div class="flex items-center justify-between mb-5">
+          <span class="chip"><i data-lucide="graduation-cap" class="w-4 h-4"></i> PORTAL SISWA</span> 
+          <span class="w-3 h-3 rounded-full bg-orange-500 ring-4 ring-orange-500/20"></span>
+        </div>
+        
+        <h2 class="canva-text font-extrabold text-xl text-white">Masuk Siswa</h2>
+        <p class="canva-text mt-1 mb-6 text-xs text-slate-400">Silakan masukkan akun siswa Anda untuk memulai tes.</p>
+        
+        <form id="login-form-student" onsubmit="handleLoginSubmit(event, 'student')">
+          <label class="canva-text block text-xs font-bold mb-1.5 text-slate-300" for="username-input">Username Siswa</label> 
+          <input id="username-input" class="canva-input field mb-4" autocomplete="username" required placeholder="Ketik username..."> 
+          
+          <label class="canva-text block text-xs font-bold mb-1.5 text-slate-300" for="password-input">Password</label> 
+          <input id="password-input" type="password" class="canva-input field mb-6" autocomplete="current-password" required placeholder="Ketik password..."> 
+
+          <button type="submit" class="canva-button btn-primary w-full py-3">Masuk Ujian Siswa</button>
+        </form>
+      </main>
+    </div>
+
+    <!-- Bagian Bawah Paling Bawah: Login Admin Ringkas/Kecil -->
+    <div class="relative z-10 w-full max-w-md pb-2 mt-6">
+      <details class="group bg-slate-900/80 border border-slate-800 rounded-xl overflow-hidden backdrop-blur-md transition-all">
+        <summary class="flex items-center justify-between px-4 py-2.5 text-xs font-semibold text-slate-400 cursor-pointer hover:text-white hover:bg-slate-800/50 select-none">
+          <span class="flex items-center gap-2"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-orange-500"></i> Akses Portal Admin</span>
+          <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-open:rotate-180"></i>
+        </summary>
+        <div class="p-4 border-t border-slate-800 bg-slate-950/60">
+          <form id="login-form-admin" onsubmit="handleLoginSubmit(event, 'admin')" class="space-y-3">
+            <div>
+              <label class="block text-[11px] font-medium text-slate-400 mb-1" for="admin-username-input">Username Admin</label>
+              <input id="admin-username-input" class="field text-xs py-2" required placeholder="Username admin">
+            </div>
+            <div>
+              <label class="block text-[11px] font-medium text-slate-400 mb-1" for="admin-password-input">Password Admin</label>
+              <input id="admin-password-input" type="password" class="field text-xs py-2" required placeholder="Password admin">
+            </div>
+            <button type="submit" class="btn-accent w-full text-xs py-2 mt-1">Masuk Administrator</button>
+          </form>
+        </div>
+      </details>
+    </div>
+   </section>
+
+   <!-- VIEW: ADMIN DASHBOARD -->
+   <section id="admin-view" class="view min-h-screen">
+    <header class="topbar sticky top-0 z-30">
+     <div class="max-w-7xl mx-auto px-4 md:px-7 py-4 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3 min-w-0"><img id="admin-logo" loading="lazy" class="canva-image brand-logo w-11 h-11 rounded-lg">
+       <div>
+        <p id="admin-brand-title" class="font-extrabold truncate text-white">Tes Psikologi Koran TNI</p>
+        <p class="canva-text text-xs text-slate-400">Administrator Dashboard</p>
+       </div>
+      </div>
+      <div class="flex items-center gap-2">
+       <span id="admin-username" class="chip hide-mobile"></span><button data-action="logout" class="canva-button btn-ghost" type="button"><i data-lucide="log-out" class="w-4 h-4"></i> Logout</button>
+      </div>
+     </div>
+    </header>
+    <main class="max-w-7xl mx-auto p-4 md:p-7">
+     <div class="tactical rounded-2xl p-6 md:p-8 text-white mb-6 border border-orange-500/20">
+      <div class="relative z-10"><span class="canva-tag inline-flex rounded-full px-3 py-1 eyebrow bg-orange-500/20 text-orange-400 border border-orange-500/30 text-xs">Pusat Kendali</span>
+       <h1 class="canva-text font-extrabold mt-3 text-3xl">Manajemen Ujian</h1>
+       <p class="canva-text mt-2 max-w-2xl text-slate-300 text-sm">Kelola paket soal, akun siswa, dan tinjau hasil ujian secara realtime.</p>
+      </div>
+     </div>
+     <div class="grid sm:grid-cols-3 gap-4 mb-6">
+      <article class="card stat-card p-5 flex items-center gap-4">
+       <div class="stat-icon"><i data-lucide="library-big" class="w-5 h-5"></i></div>
+       <div><p class="canva-text text-sm font-bold text-slate-400">Total Paket</p><strong id="package-count" class="text-2xl text-white">0</strong></div>
+      </article>
+      <article class="card stat-card p-5 flex items-center gap-4">
+       <div class="stat-icon"><i data-lucide="users" class="w-5 h-5"></i></div>
+       <div><p class="canva-text text-sm font-bold text-slate-400">Total Siswa</p><strong id="student-count" class="text-2xl text-white">0</strong></div>
+      </article>
+      <article class="card stat-card p-5 flex items-center gap-4">
+       <div class="stat-icon"><i data-lucide="chart-no-axes-combined" class="w-5 h-5"></i></div>
+       <div><p class="canva-text text-sm font-bold text-slate-400">Hasil Tes</p><strong id="result-count" class="text-2xl text-white">0</strong></div>
+      </article>
+     </div>
+     <nav class="card-dark rounded-xl p-2 mb-6 grid grid-cols-2 lg:grid-cols-4 gap-2" aria-label="Menu administrator">
+        <button class="admin-tab rounded-lg px-3 py-3 font-bold" data-panel="packages-panel" aria-selected="true" type="button"><span class="canva-text">Paket Soal</span></button> 
+        <button class="admin-tab rounded-lg px-3 py-3 font-bold" data-panel="students-panel" aria-selected="false" type="button"><span class="canva-text">Data Siswa</span></button> 
+        <button class="admin-tab rounded-lg px-3 py-3 font-bold" data-panel="results-panel" aria-selected="false" type="button"><span class="canva-text">Hasil Ujian</span></button> 
+        <button class="admin-tab rounded-lg px-3 py-3 font-bold" data-panel="settings-panel" aria-selected="false" type="button"><span class="canva-text">Pengaturan</span></button>
+     </nav>
+     
+     <section id="packages-panel" class="admin-panel active">
+      <div class="grid lg:grid-cols-[400px_1fr] gap-6 items-start">
+       <section class="card p-5 md:p-6">
+        <div class="flex justify-between gap-3 mb-5">
+         <div>
+          <h2 id="package-form-heading" class="canva-text font-extrabold text-xl text-white">Buat Paket Soal</h2>
+          <p class="canva-text text-xs text-slate-400">Konfigurasi ujian baru.</p>
+         </div><button id="cancel-package-edit" type="button" class="canva-button btn-ghost text-xs hidden">Batal</button>
+        </div>
+        <form id="package-form" class="space-y-4">
+         <div>
+          <label class="canva-text block font-bold text-xs mb-1.5 text-slate-300" for="package-name">Nama Paket</label><input id="package-name" class="canva-input field" required maxlength="60">
+         </div>
+         <div class="grid grid-cols-2 gap-3">
+          <div>
+           <label class="canva-text block font-bold text-xs mb-1.5 text-slate-300" for="total-time">Total (Menit)</label><input id="total-time" class="field" type="number" min="1" max="120" value="20" required>
+          </div>
+          <div>
+           <label class="canva-text block font-bold text-xs mb-1.5 text-slate-300" for="interval-time">Interval Skor (Menit)</label><input id="interval-time" class="field" type="number" min="1" max="60" value="1" required>
+          </div>
+         </div>
+         <div>
+          <label class="canva-text block font-bold text-xs mb-1.5 text-slate-300" for="max-attempts">Batas Mengerjakan (Kali)</label><input id="max-attempts" class="field" type="number" min="1" max="20" value="1" required>
+         </div>
+         <fieldset>
+          <legend class="canva-text font-bold text-xs mb-2 text-slate-300">Tugaskan Kepada</legend><label class="check-row mb-2"><input id="assign-all" type="checkbox"><span class="canva-text text-sm">Semua Siswa</span></label>
+          <div id="student-checklist" class="space-y-2 max-h-56 overflow-auto"></div>
+          <p id="student-check-empty" class="canva-text mt-2 text-xs text-center text-slate-400">Belum ada siswa.</p>
+         </fieldset><button id="save-package" type="submit" class="canva-button btn-primary w-full">Simpan Paket</button>
+        </form>
+       </section>
+       <section class="card p-5 md:p-6">
+        <div class="flex items-center justify-between gap-4 mb-5">
+         <h2 class="canva-text font-extrabold text-xl text-white">Daftar Paket</h2><span id="record-limit" class="chip">0 / 999</span>
+        </div>
+        <div id="admin-package-list" class="grid md:grid-cols-2 gap-4"></div>
+        <div id="admin-package-empty" class="empty p-8 text-center">
+         <i data-lucide="package-open" class="w-9 h-9 mx-auto mb-3 text-slate-500"></i>
+         <p class="canva-text text-sm text-slate-400">Belum ada paket soal dibuat.</p>
+        </div>
+       </section>
+      </div>
+     </section>
+     
+     <section id="students-panel" class="admin-panel">
+      <div class="grid lg:grid-cols-[390px_1fr] gap-6 items-start">
+       <section class="card p-5 md:p-6">
+        <h2 class="canva-text font-extrabold text-xl text-white">Manajemen Akun Siswa</h2>
+        <p class="canva-text mt-1 mb-5 text-xs text-slate-400">Buat dan kelola akun login siswa.</p>
+        <form id="student-form">
+         <input id="edit-student-id" type="hidden">
+         <label class="canva-text block font-bold text-xs mb-1.5 text-slate-300" for="new-student-name">Username Siswa</label>
+         <input id="new-student-name" class="canva-input field mb-4" maxlength="40" required>
+         <label class="canva-text block font-bold text-xs mb-1.5 text-slate-300" for="new-student-password">Password Siswa</label>
+         <input id="new-student-password" type="text" class="canva-input field mb-6" maxlength="40" required>
+         <div class="flex gap-2">
+            <button id="cancel-student" type="button" class="canva-button btn-ghost w-full hidden">Batal</button>
+            <button id="save-student" type="submit" class="canva-button btn-primary w-full">Simpan Siswa</button>
+         </div>
+        </form>
+       </section>
+       <section class="card p-5 md:p-6">
+        <h2 class="canva-text font-extrabold text-xl text-white">Daftar Siswa</h2>
+        <p class="canva-text mt-1 mb-5 text-xs text-slate-400">Daftar siswa yang dapat mengikuti ujian.</p>
+        <div id="student-admin-list" class="grid md:grid-cols-2 gap-4"></div>
+        <div id="student-admin-empty" class="empty p-8 text-center">
+         <p class="canva-text text-sm text-slate-400">Belum ada data siswa.</p>
+        </div>
+       </section>
+      </div>
+     </section>
+     
+     <section id="results-panel" class="admin-panel">
+      <div class="grid lg:grid-cols-[1fr_400px] gap-6 items-start">
+       <section class="card p-5 md:p-6 overflow-hidden">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-5">
+         <div>
+          <h2 class="canva-text font-extrabold text-xl text-white">Riwayat Ujian</h2>
+          <div class="flex flex-wrap gap-2 mt-2">
+           <button id="delete-selected-results" type="button" class="canva-button btn-danger text-xs px-3 py-1.5 hidden"><i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Hapus Terpilih (<span id="selected-result-count">0</span>)</button>
+           <button id="delete-all-results" type="button" class="canva-button btn-danger text-xs px-3 py-1.5"><i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Hapus Semua</button>
+          </div>
+         </div>
+         <div class="w-full md:w-72">
+          <label class="canva-text block font-bold text-xs mb-1.5 text-slate-300" for="result-search">Cari Nama/Paket</label><input id="result-search" class="canva-input field" placeholder="Ketik untuk mencari...">
+         </div>
+        </div>
+        <div class="overflow-x-auto">
+         <table class="w-full min-w-[850px] text-left text-sm">
+          <thead>
+           <tr class="border-b border-slate-800 text-slate-400">
+            <th class="py-3 pr-2 w-10"><input type="checkbox" id="select-all-results" class="w-4 h-4 accent-orange-500"></th>
+            <th class="py-3 pr-4">Siswa</th>
+            <th class="py-3 pr-4">Paket</th>
+            <th class="py-3 pr-4">Skor</th>
+            <th class="py-3 pr-4">Akurasi</th>
+            <th class="py-3 pr-4">Tanggal</th>
+            <th class="py-3">Aksi</th>
+           </tr>
+          </thead>
+          <tbody id="result-table-body"></tbody>
+         </table>
+        </div>
+        <div id="results-empty" class="empty p-7 text-center mt-4">
+         <p class="canva-text text-sm text-slate-400">Belum ada hasil ujian.</p>
+        </div>
+       </section>
+       <section id="result-detail-panel" class="card p-5 md:p-6 hidden">
+        <button id="close-detail-panel" type="button" class="p-2 rounded-lg hover:bg-slate-800 mb-3 text-slate-300" aria-label="Tutup"><i data-lucide="x"></i></button>
+        <h2 class="canva-text font-extrabold text-xl text-white">Detail Hasil</h2>
+        <div id="detail-panel-content" class="mt-5 space-y-4"></div>
+       </section>
+      </div>
+     </section>
+     
+     <section id="settings-panel" class="admin-panel">
+      <section class="card p-5 md:p-7 max-w-3xl">
+       <h2 class="canva-text font-extrabold text-xl text-white">Pengaturan Aplikasi</h2>
+       <p class="canva-text mt-1 mb-6 text-xs text-slate-400">Sesuaikan identitas website dan kredensial akses admin.</p>
+       <form id="settings-form" class="space-y-4">
+        <div class="grid md:grid-cols-2 gap-4 border-b border-slate-800 pb-6 mb-2">
+            <div><label class="canva-text block font-bold text-xs mb-1.5 text-slate-300">Username Admin</label><input id="settings-admin-name" class="field" required maxlength="40"></div>
+            <div><label class="canva-text block font-bold text-xs mb-1.5 text-slate-300">Password Admin</label><input id="settings-admin-password" type="text" class="field" required maxlength="40"></div>
+        </div>
+        <div><label class="canva-text block font-bold text-xs mb-1.5 text-slate-300">Judul Website</label><input id="settings-title" class="field" required maxlength="80"></div>
+        <div><label class="canva-text block font-bold text-xs mb-1.5 text-slate-300">Deskripsi Website</label><input id="settings-subtitle" class="field" required maxlength="180"></div>
+        <div>
+         <label class="canva-text block font-bold text-xs mb-1.5 text-slate-300">Upload Logo</label>
+         <input id="settings-logo-file" class="field" type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg">
+        </div>
+        <div class="flex items-center gap-4 rounded-xl bg-slate-900 p-4 border border-slate-800">
+         <img id="logo-preview" class="w-20 h-20 object-cover rounded-lg bg-white" alt="Pratinjau logo">
+         <p class="canva-text text-sm font-bold text-slate-300">Pratinjau Logo Aktif</p>
+        </div>
+        <button id="save-settings" type="submit" class="canva-button btn-primary w-full md:w-auto">Simpan Pengaturan</button>
+       </form>
+      </section>
+     </section>
+    </main>
+   </section>
+
+   <!-- VIEW: STUDENT DASHBOARD -->
+   <section id="student-view" class="view min-h-screen">
+    <header class="topbar sticky top-0 z-30">
+     <div class="max-w-6xl mx-auto px-4 md:px-7 py-4 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3 min-w-0">
+       <img id="student-logo" loading="lazy" class="canva-image brand-logo w-11 h-11 rounded-lg">
+       <div>
+        <p id="student-brand-title" class="font-extrabold truncate text-white">Tes Psikologi Koran TNI</p>
+        <p class="canva-text text-xs text-slate-400">Portal Siswa</p>
+       </div>
+      </div><button data-action="logout" class="canva-button btn-ghost" type="button"><i data-lucide="log-out" class="w-4 h-4"></i> Logout</button>
+     </div>
+    </header>
+    <main class="max-w-6xl mx-auto p-4 md:p-7">
+     <section class="tactical rounded-2xl p-6 md:p-10 text-white mb-7 border border-orange-500/20">
+      <div class="relative z-10 max-w-2xl">
+       <span class="canva-tag inline-flex rounded-full px-3 py-1 eyebrow bg-orange-500/20 text-orange-400 border border-orange-500/30 text-xs">Dashboard</span>
+       <h1 class="font-extrabold text-3xl md:text-5xl mt-3"><span class="canva-text">Selamat datang,</span> <span id="student-name" class="text-orange-400"></span></h1>
+       <p class="canva-text mt-3 text-slate-300 text-sm">Kerjakan ujian yang ditugaskan dengan teliti dan fokus penuh.</p>
+      </div>
+     </section>
+     <div class="grid lg:grid-cols-[1fr_310px] gap-6 items-start">
+      <section class="card p-5 md:p-6">
+       <h2 class="canva-text font-extrabold text-xl text-white">Ujian Tersedia</h2>
+       <div id="student-package-list" class="grid md:grid-cols-2 gap-4 mt-5"></div>
+       <div id="student-package-empty" class="empty p-9 text-center">
+        <p class="canva-text text-slate-400 text-sm">Tidak ada ujian yang ditugaskan saat ini.</p>
+       </div>
+      </section>
+      <aside class="space-y-5">
+       <section class="card-dark rounded-2xl p-5">
+        <div class="w-11 h-11 rounded-lg bg-orange-500 text-white grid place-items-center mb-4">
+         <i data-lucide="crosshair" class="w-5 h-5"></i>
+        </div>
+        <h2 class="canva-text font-extrabold text-lg text-white">Instruksi Tes Koran</h2>
+        <ol class="mt-4 space-y-3 text-xs text-slate-300 list-decimal pl-4">
+         <li class="canva-text">Jumlahkan dua angka yang ditandai dengan kotak oranye.</li>
+         <li class="canva-text">Hanya ketik/masukkan <b>digit terakhir</b> dari hasil penjumlahan (Contoh: 8+7=15, ketik 5).</li>
+         <li class="canva-text">Gunakan keypad otomatis atau keyboard fisik. Lajur dan keypad akan <b>berpindah secara otomatis</b>.</li>
+        </ol>
+       </section>
+       <section id="latest-result-card" class="card p-5 hidden">
+        <h2 class="canva-text font-extrabold text-white">Hasil Tes Terakhir</h2>
+        <div class="flex items-center gap-4 mt-4">
+         <div id="latest-score-ring" class="score-ring" style="--score:0">
+          <strong id="latest-score">0</strong>
+         </div>
+         <div>
+          <p id="latest-package-name" class="font-bold text-white"></p>
+          <p id="latest-result-date" class="text-xs text-slate-400 mt-1"></p>
+         </div>
+        </div><button id="view-latest-result" type="button" class="canva-button btn-ghost w-full mt-5">Lihat Analisis Detail</button>
+       </section>
+      </aside>
+     </div>
+    </main>
+   </section>
+
+   <!-- VIEW: EXAM -->
+   <section id="exam-view" class="view exam-bg relative">
+    <header class="exam-topbar">
+      <div class="flex flex-col">
+        <span id="exam-company" class="font-bold text-[10px] md:text-xs tracking-[0.15em] text-slate-400">TES HITUNGAN KORAN TNI</span>
+        <span class="text-orange-400 text-xs md:text-sm font-extrabold uppercase" id="exam-package-name">TES KORAN CAT</span>
+      </div>
+      <div id="time-remaining" class="text-2xl md:text-3xl font-bold tabular-nums text-white">00:00:00</div>
+      <div class="font-extrabold text-xs md:text-sm tracking-widest text-slate-400" id="lajur-info">LAJUR: 1</div>
+      <button id="end-exam-button" class="hidden"></button>
+    </header>
+    <main class="relative h-full w-full">
+      <div id="koran-grid-container" class="koran-grid-container">
+      </div>
+      
+      <div id="floating-keypad">
+         <div class="keypad-header"><i data-lucide="cpu" class="w-3 h-3"></i> KEYPAD OTOMATIS</div>
+         <div class="keypad-grid">
+           <button type="button" class="keypad-btn" data-digit="1">1</button>
+           <button type="button" class="keypad-btn" data-digit="2">2</button>
+           <button type="button" class="keypad-btn" data-digit="3">3</button> 
+           <button type="button" class="keypad-btn" data-digit="4">4</button>
+           <button type="button" class="keypad-btn" data-digit="5">5</button>
+           <button type="button" class="keypad-btn" data-digit="6">6</button> 
+           <button type="button" class="keypad-btn" data-digit="7">7</button>
+           <button type="button" class="keypad-btn" data-digit="8">8</button>
+           <button type="button" class="keypad-btn" data-digit="9">9</button> 
+           <button type="button" class="keypad-btn keypad-btn-zero" data-digit="0">0</button>
+         </div>
+      </div>
+    </main>
+   </section>
+
+   <!-- VIEW: RESULTS -->
+   <section id="result-view" class="view min-h-screen">
+    <header class="topbar">
+     <div class="max-w-6xl mx-auto px-4 md:px-7 py-5 flex items-center justify-between gap-4">
+      <div>
+       <p class="canva-text eyebrow text-orange-400 text-xs">Laporan Akhir</p>
+       <h1 class="canva-text font-extrabold text-xl text-white">Analisis Hasil Ujian Tes Koran</h1>
+      </div><button id="back-dashboard" type="button" class="canva-button btn-primary">Kembali ke Dashboard</button>
+     </div>
+    </header>
+    <main class="max-w-6xl mx-auto p-4 md:p-7">
+     <section class="tactical rounded-2xl p-6 md:p-9 text-white mb-7 border border-orange-500/20">
+      <div class="relative z-10 grid md:grid-cols-[1fr_auto] gap-5 items-center">
+       <div>
+        <span class="canva-tag inline-flex rounded-full px-3 py-1 eyebrow bg-orange-500/20 text-orange-400 text-xs">Selesai</span>
+        <h2 id="result-package-name" class="font-extrabold text-3xl md:text-4xl mt-3"></h2>
+        <p id="result-summary" class="mt-2 text-slate-300 text-sm"></p>
+       </div>
+       <div class="rounded-xl bg-orange-500 text-white px-8 py-5 text-center shadow-lg">
+        <p class="canva-text text-xs font-bold opacity-90 tracking-wider">SKOR KESELURUHAN</p>
+        <strong id="overall-score" class="text-5xl block mt-1">0</strong>
+       </div>
+      </div>
+     </section>
+     <section class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-7">
+      <article class="card p-5 text-center">
+       <div id="ring-speed" class="score-ring mx-auto" style="--score:0">
+        <strong id="score-speed">0</strong>
+       </div>
+       <h3 class="font-bold mt-3 text-sm text-slate-300">Kecepatan (Panker)</h3>
+      </article>
+      <article class="card p-5 text-center">
+       <div id="ring-accuracy" class="score-ring mx-auto" style="--score:0">
+        <strong id="score-accuracy">0</strong>
+       </div>
+       <h3 class="font-bold mt-3 text-sm text-slate-300">Ketelitian (Tianker)</h3>
+      </article>
+      <article class="card p-5 text-center">
+       <div id="ring-consistency" class="score-ring mx-auto" style="--score:0">
+        <strong id="score-consistency">0</strong>
+       </div>
+       <h3 class="font-bold mt-3 text-sm text-slate-300">Keajegan (Janker)</h3>
+      </article>
+      <article class="card p-5 text-center">
+       <div id="ring-endurance" class="score-ring mx-auto" style="--score:0">
+        <strong id="score-endurance">0</strong>
+       </div>
+       <h3 class="font-bold mt-3 text-sm text-slate-300">Daya Tahan (Hanker)</h3>
+      </article>
+     </section>
+     <div class="grid lg:grid-cols-[1.3fr_.7fr] gap-6">
+      <section class="card p-5 md:p-7">
+       <h2 class="canva-text font-extrabold text-xl text-white">Grafik Ritme Kerja</h2>
+       <p class="canva-text mt-1 mb-5 text-xs text-slate-400">Kurva menunjukkan jumlah jawaban yang diselesaikan tiap interval skor waktu.</p>
+       <svg id="performance-chart" viewbox="0 0 720 320" class="w-full" role="img" aria-label="Grafik performa per interval"></svg>
+      </section>
+      <section class="card p-5 md:p-7">
+       <h2 class="canva-text font-extrabold text-xl text-white">Saran Penilaian Psikologi</h2>
+       <p class="canva-text mt-1 mb-5 text-xs text-slate-400">Evaluasi berdasarkan norma pengukuran performa kerja Tes Koran.</p>
+       <div id="advice-list" class="space-y-3"></div>
+      </section>
+     </div>
+    </main>
+   </section>
+  </div>
+  
+  <div id="start-modal" class="modal" role="dialog" aria-modal="true">
+   <div class="modal-card">
+    <h2 id="start-modal-title" class="canva-text font-extrabold text-xl text-white">Mulai Ujian</h2>
+    <p class="canva-text mt-2 text-xs text-slate-400">Sistem akan memindahkan lajur secara otomatis setiap interval waktu dan jika lajur penuh.</p>
+    <div id="start-modal-details" class="mt-5 rounded-xl bg-slate-900 border border-slate-800 p-4 text-sm space-y-2"></div>
+    <div class="grid grid-cols-2 gap-3 mt-6">
+     <button id="cancel-start" type="button" class="canva-button btn-ghost">Batal</button>
+     <button id="confirm-start" type="button" class="canva-button btn-primary">Mulai Tes Sekarang</button>
+    </div>
+   </div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+    import { getFirestore, collection, onSnapshot, doc, setDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+    // Konfigurasi Firebase (Koran Garuda)
+    const firebaseConfig = {
+      apiKey: "AIzaSyD7skHuet7_b4yTS3uecUVCDs7NBQqkPO8",
+      authDomain: "korangaruda.firebaseapp.com",
+      projectId: "korangaruda",
+      storageBucket: "korangaruda.firebasestorage.app",
+      messagingSenderId: "819169820666",
+      appId: "1:819169820666:web:e5212bb52c452facc5ee43",
+      measurementId: "G-W3W12C7Z8E"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getFirestore(app);
+
+    // Struktur Penyimpanan Terorganisir pada Firestore
+    window.dataSdk = {
+      init: async (h) => {
+        try { onSnapshot(collection(db, "koran_garuda_data"), (s) => h.onDataChanged(s.docs.map(d => ({ __backendId: d.id, ...d.data() })))); return { isOk: true }; } 
+        catch (e) { return { isOk: false }; }
+      },
+      create: async (r) => { try { await setDoc(doc(collection(db, "koran_garuda_data")), r); return { isOk: true }; } catch (e) { return { isOk: false }; } },
+      update: async (r) => { try { const d = { ...r }; delete d.__backendId; await setDoc(doc(db, "koran_garuda_data", r.__backendId), d, { merge: true }); return { isOk: true }; } catch (e) { return { isOk: false }; } },
+      delete: async (r) => { try { await deleteDoc(doc(db, "koran_garuda_data", r.__backendId)); return { isOk: true }; } catch (e) { return { isOk: false }; } }
+    };
+
+    const DEFAULTS={title:"Tes Psikologi Koran TNI",subtitle:"Simulasi Tes Kraepelin/Pauli terukur untuk menilai kecepatan, ketelitian, keajegan, dan daya tahan.",logo:"https://images.pexels.com/photos/163443/war-desert-guns-gunshow-163443.jpeg?auto=compress&cs=tinysrgb&w=400", admin_username:"aam14", admin_password:"1234"};
+    const state={records:[],currentUser:null,pendingPackage:null,editingPackageId:null,latestResult:null,exam:null,timerId:null,ending:false,pendingLogo:""};
+    const $=id=>document.getElementById(id);
+    const views=["login-view","admin-view","student-view","exam-view","result-view"];
+    
+    function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]))}
+    function toast(msg,type="success"){const el=$("toast");el.textContent=msg;el.className=`toast ${type==="error"?"error":""} show`;clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove("show"),3200)}
+    function view(id){views.forEach(v=>$(v).classList.toggle("active",v===id));if(id!=='exam-view')window.scrollTo({top:0,behavior:"smooth"})}
+    function loading(b,on){b.disabled=on;if(on){b.dataset.old=b.innerHTML;b.innerHTML='<i data-lucide="loader-circle" class="w-4 h-4 loading"></i><span>Memproses...</span>'}else if(b.dataset.old){b.innerHTML=b.dataset.old;delete b.dataset.old}lucide.createIcons()}
+    
+    function blank(type){return{type,username:"",password:"",role:"",package_id:"",package_name:"",total_time:0,interval_time:0,max_attempts:0,assigned_to:"",score_speed:0,score_accuracy:0,score_endurance:0,score_consistency:0,score_stability:0,interval_scores:"",completed_at:"",logo_url:"",site_title:"",site_subtitle:""}}
+    function packages(){return state.records.filter(r=>r.type==="package")}
+    function users(){return state.records.filter(r=>r.type==="user"&&r.role==="student")}
+    function results(){return state.records.filter(r=>r.type==="result")}
+    function settings(){return state.records.find(r=>r.type==="settings")}
+    
+    function identity(){const s=settings();return{title:s?.site_title||DEFAULTS.title,subtitle:s?.site_subtitle||DEFAULTS.subtitle,logo:s?.logo_url||DEFAULTS.logo,admin_user: s?.username || DEFAULTS.admin_username,admin_pass: s?.password || DEFAULTS.admin_password}}
+    function formatDate(iso){return iso?new Intl.DateTimeFormat("id-ID",{dateStyle:"medium",timeStyle:"short"}).format(new Date(iso)):"—"}
+    function overall(r){return Math.round((+r.score_speed + +r.score_accuracy + +r.score_endurance + +r.score_consistency)/4)}
+    function assignedNames(pkg){return pkg.assigned_to==="*"?["*"]:String(pkg.assigned_to||"").split("|").map(x=>x.trim()).filter(Boolean)}
+    function isAssigned(pkg,name){const list=assignedNames(pkg);return list.includes("*")||list.some(x=>x.toLowerCase()===name.toLowerCase())}
+    function attempts(pkgId,name){return results().filter(r=>r.package_id===pkgId&&r.username.toLowerCase()===name.toLowerCase()).length}
+
+    function applyIdentity(){
+      const i=identity(),s=settings();
+      $("admin-brand-title").textContent=i.title; $("student-brand-title").textContent=i.title;
+      $("settings-admin-name").value=i.admin_user; $("settings-admin-password").value=i.admin_pass;
+      $("settings-title").value=i.title; $("settings-subtitle").value=i.subtitle;
+      $("logo-preview").src=i.logo;
+      if (document.querySelector('#login-title')) document.querySelector('#login-title').textContent = i.title;
+      if (document.querySelector('#login-subtitle')) document.querySelector('#login-subtitle').textContent = i.subtitle;
+      ["login-logo","admin-logo","student-logo"].forEach(id=>{const img=$(id);if(s||!img.getAttribute("src"))img.src=i.logo;img.alt=`Logo ${i.title}`});
+      document.title=i.title;
+      
+      const overlay = document.querySelector('.login-overlay');
+      if(overlay){
+          overlay.style.backgroundImage = `linear-gradient(180deg,rgba(5,8,17,.92) 0%,rgba(10,25,47,.95) 100%), url('${i.logo}')`;
+          overlay.style.opacity = '0.96';
+      }
+    }
+
+    function renderAll(){
+      applyIdentity(); $("record-limit").textContent=`${state.records.length} / 999`;
+      $("package-count").textContent=packages().length; $("student-count").textContent=users().length; $("result-count").textContent=results().length;
+      renderChecklist(); renderPackages(); renderStudents(); renderResults();
+      if(state.currentUser?.role==="student")renderStudent();
+    }
+
+    function reconcile(container,items,keyOf,create,update){
+      const existing=new Map([...container.children].filter(el=>el.dataset.recordId).map(el=>[el.dataset.recordId,el]));
+      items.forEach(item=>{const key=keyOf(item);let el=existing.get(key);if(!el){el=create(item);el.dataset.recordId=key;container.appendChild(el)}update(el,item);existing.delete(key)});
+      existing.forEach(el=>el.remove());
+    }
+
+    function renderChecklist(){
+      const box=$("student-checklist"),selected=new Set([...box.querySelectorAll("input:checked")].map(i=>i.value));
+      reconcile(box,users().sort((a,b)=>a.username.localeCompare(b.username)),u=>u.__backendId,u=>{const label=document.createElement("label");label.className="check-row";label.innerHTML='<input type="checkbox"><span class="text-xs"></span>';return label},(label,u)=>{const input=label.querySelector("input");input.value=u.username;input.checked=selected.has(u.username);input.disabled=$("assign-all").checked;label.querySelector("span").textContent=u.username});
+      $("student-check-empty").classList.toggle("hidden",users().length>0);
+    }
+    
+    function renderPackages(){
+      const box=$("admin-package-list");
+      reconcile(box,packages(),p=>p.__backendId,()=>{
+        const card=document.createElement("article");card.className="package-card rounded-xl p-5";
+        card.innerHTML=`<div class="flex items-start justify-between gap-3"><div><span class="chip assignment"></span><h3 class="font-extrabold text-lg mt-3 name text-white"></h3></div><div class="flex gap-1"><button class="edit p-2 rounded-lg hover:bg-slate-800 text-slate-300"><i data-lucide="edit-3" class="w-4 h-4"></i></button><button class="remove p-2 rounded-lg text-red-400 hover:bg-red-500/20"><i data-lucide="trash-2" class="w-4 h-4"></i></button></div></div><div class="grid grid-cols-3 gap-2 mt-5 text-center text-xs"><div class="rounded-lg bg-slate-900 border border-slate-800 p-3"><strong class="block total text-sm text-white"></strong><span class="text-slate-400">total</span></div><div class="rounded-lg bg-slate-900 border border-slate-800 p-3"><strong class="block interval text-sm text-white"></strong><span class="text-slate-400">interval</span></div><div class="rounded-lg bg-slate-900 border border-slate-800 p-3"><strong class="block attempts text-sm text-white"></strong><span class="text-slate-400">kali</span></div></div><div class="confirm hidden mt-4 grid grid-cols-2 gap-2"><button class="cancel btn-ghost text-xs">Batal</button><button class="yes btn-danger text-xs">Hapus</button></div>`;
+        return card;
+      },(card,pkg)=>{
+        card.querySelector(".assignment").textContent=pkg.assigned_to==="*"?"Semua siswa":assignedNames(pkg).length+" siswa"; card.querySelector(".name").textContent=pkg.package_name; card.querySelector(".total").textContent=`${pkg.total_time} mnt`; card.querySelector(".interval").textContent=`${pkg.interval_time} mnt`; card.querySelector(".attempts").textContent=pkg.max_attempts;
+        card.querySelector(".edit").onclick=()=>{state.editingPackageId=pkg.__backendId;$("package-name").value=pkg.package_name;$("total-time").value=pkg.total_time;$("interval-time").value=pkg.interval_time;$("max-attempts").value=pkg.max_attempts;$("assign-all").checked=pkg.assigned_to==="*";const selected=new Set(assignedNames(pkg).map(x=>x.toLowerCase()));document.querySelectorAll("#student-checklist input").forEach(i=>{i.checked=selected.has(i.value.toLowerCase());i.disabled=$("assign-all").checked});$("cancel-package-edit").classList.remove("hidden");$("package-form-heading").textContent="Edit paket soal";$("package-form").scrollIntoView({behavior:"smooth",block:"start"});};
+        card.querySelector(".remove").onclick=()=>card.querySelector(".confirm").classList.remove("hidden"); card.querySelector(".cancel").onclick=()=>card.querySelector(".confirm").classList.add("hidden");
+        card.querySelector(".yes").onclick=async e=>{loading(e.currentTarget,true);const out=await window.dataSdk.delete(pkg);if(out.isOk)toast("Dihapus.");else toast("Gagal.","error");loading(e.currentTarget,false)};
+      });
+      $("admin-package-empty").classList.toggle("hidden",packages().length>0);lucide.createIcons();
+    }
+    
+    function renderStudents(){
+      const box=$("student-admin-list");
+      reconcile(box,users().sort((a,b)=>a.username.localeCompare(b.username)),u=>u.__backendId,()=>{
+        const card=document.createElement("article");card.className="border border-slate-800 rounded-xl p-5 bg-slate-900";
+        card.innerHTML=`<div class="flex items-start justify-between"><div><span class="chip"><i data-lucide="user" class="w-3 h-3"></i> SISWA</span><h3 class="name font-extrabold text-lg mt-3 text-white"></h3><p class="assigned text-xs text-slate-400 mt-1"></p><p class="password-show text-xs text-slate-500 mt-1 font-mono"></p></div><div class="flex gap-1"><button class="edit p-2 rounded-lg hover:bg-slate-800 text-slate-300"><i data-lucide="edit-3" class="w-4 h-4"></i></button><button class="remove p-2 rounded-lg text-red-400 hover:bg-red-500/20"><i data-lucide="trash-2" class="w-4 h-4"></i></button></div></div><div class="confirm hidden mt-4 grid grid-cols-2 gap-2"><button class="cancel btn-ghost text-xs">Batal</button><button class="yes btn-danger text-xs">Hapus</button></div>`;
+        return card;
+      },(card,u)=>{
+        card.querySelector(".name").textContent=u.username; card.querySelector(".password-show").textContent=`Pass: ${u.password}`;
+        card.querySelector(".assigned").textContent=`Dapat akses ${packages().filter(p=>isAssigned(p,u.username)).length} paket`;
+        card.querySelector(".edit").onclick=()=>{ $("edit-student-id").value=u.__backendId; $("new-student-name").value=u.username; $("new-student-password").value=u.password; $("cancel-student").classList.remove("hidden"); $("student-form").scrollIntoView({behavior:"smooth",block:"start"}); };
+        card.querySelector(".remove").onclick=()=>card.querySelector(".confirm").classList.remove("hidden"); card.querySelector(".cancel").onclick=()=>card.querySelector(".confirm").classList.add("hidden");
+        card.querySelector(".yes").onclick=async e=>{loading(e.currentTarget,true);const out=await window.dataSdk.delete(u);if(out.isOk){toast("Siswa dihapus.");renderChecklist()}else toast("Gagal.","error");loading(e.currentTarget,false)};
+      });
+      $("student-admin-empty").classList.toggle("hidden",users().length>0);lucide.createIcons();
+    }
+    
+    function updateDeleteSelectedBtn() {
+      const checked = document.querySelectorAll(".result-item-check:checked");
+      const btn = $("delete-selected-results");
+      const count = $("selected-result-count");
+      if(btn && count) {
+        count.textContent = checked.length;
+        btn.classList.toggle("hidden", checked.length === 0);
+      }
+    }
+
+    function renderResults(){
+      const term=$("result-search").value.toLowerCase(),box=$("result-table-body");
+      const filtered=results().sort((a,b)=>new Date(b.completed_at)-new Date(a.completed_at)).filter(r=>r.username.toLowerCase().includes(term)||r.package_name.toLowerCase().includes(term));
+      box.innerHTML="";
+      if($("select-all-results")) $("select-all-results").checked = false;
+      updateDeleteSelectedBtn();
+
+      filtered.forEach(r=>{
+        const tr=document.createElement("tr");tr.className="border-b border-slate-800 hover:bg-slate-900/50 transition-colors";
+        tr.innerHTML=`<td class="py-3 pr-2"><input type="checkbox" class="result-item-check w-4 h-4 accent-orange-500" data-id="${r.__backendId}"></td><td class="py-3 pr-4 font-bold text-white">${esc(r.username)}</td><td class="py-3 pr-4 text-slate-300">${esc(r.package_name)}</td><td class="py-3 pr-4"><span class="chip">${overall(r)}</span></td><td class="py-3 pr-4 text-slate-300">${r.score_accuracy}%</td><td class="py-3 pr-4 text-xs text-slate-400 whitespace-nowrap">${formatDate(r.completed_at)}</td><td class="py-3 flex items-center gap-1"><button class="btn-detail btn-ghost rounded-md px-3 py-1.5 text-xs" type="button">Detail</button><button class="btn-delete-item p-2 rounded-lg text-red-400 hover:bg-red-500/20" type="button" title="Hapus Item"><i data-lucide="trash-2" class="w-4 h-4"></i></button></td>`;
+        
+        tr.querySelector(".btn-detail").onclick=()=>{
+          $("result-detail-panel").classList.remove("hidden");$("result-detail-panel").scrollIntoView({behavior:"smooth",block:"start"});
+          $("detail-panel-content").innerHTML=`<div class="grid grid-cols-2 gap-3 mb-4"><div class="bg-slate-900 p-3 rounded-lg border border-slate-800"><p class="text-[10px] font-bold text-slate-400 uppercase">Siswa</p><p class="font-extrabold text-base text-white">${esc(r.username)}</p></div><div class="bg-slate-900 p-3 rounded-lg border border-slate-800"><p class="text-[10px] font-bold text-slate-400 uppercase">Paket</p><p class="font-extrabold text-base text-white">${esc(r.package_name)}</p></div></div><div class="space-y-2 text-sm"><div class="flex justify-between border-b border-slate-800 pb-2"><span class="font-bold text-slate-300">Kecepatan (Panker)</span><span class="text-white">${r.score_speed}</span></div><div class="flex justify-between border-b border-slate-800 pb-2"><span class="font-bold text-slate-300">Ketelitian (Tianker)</span><span class="text-white">${r.score_accuracy}%</span></div><div class="flex justify-between border-b border-slate-800 pb-2"><span class="font-bold text-slate-300">Keajegan (Janker)</span><span class="text-white">${r.score_consistency}</span></div><div class="flex justify-between border-b border-slate-800 pb-2"><span class="font-bold text-slate-300">Daya Tahan (Hanker)</span><span class="text-white">${r.score_endurance}</span></div></div><div class="mt-4"><p class="font-bold text-xs mb-2 text-slate-300">Riwayat per Interval:</p><p class="font-mono text-xs break-words bg-slate-900 border border-slate-800 p-3 rounded-lg text-slate-300">${esc(r.interval_scores)}</p></div>`;
+        };
+
+        tr.querySelector(".btn-delete-item").onclick=async (e)=>{
+          if(confirm(`Yakin ingin menghapus hasil ujian ${r.username} (${r.package_name})?`)){
+            loading(e.currentTarget, true);
+            const out = await window.dataSdk.delete(r);
+            if(out.isOk) {
+              toast("Hasil ujian berhasil dihapus.");
+              if(!$("result-detail-panel").classList.contains("hidden")) $("result-detail-panel").classList.add("hidden");
+            } else toast("Gagal menghapus.", "error");
+          }
+        };
+
+        tr.querySelector(".result-item-check").onchange=updateDeleteSelectedBtn;
+
+        box.appendChild(tr);
+      });
+      $("results-empty").classList.toggle("hidden",filtered.length>0);
+      lucide.createIcons();
+    }
+    
+    function renderStudent(){
+      const user=state.currentUser;if(!user)return; $("student-name").textContent=user.username;
+      const myPackages=packages().filter(p=>isAssigned(p,user.username)); const box=$("student-package-list");
+      reconcile(box,myPackages,p=>p.__backendId,()=>{
+        const card=document.createElement("article");card.className="card p-5 border border-slate-800 hover:border-orange-500 transition-colors cursor-pointer";
+        card.innerHTML=`<div class="flex justify-between items-start mb-3"><div class="w-10 h-10 rounded-lg bg-orange-500/10 border border-orange-500/20 grid place-items-center"><i data-lucide="file-text" class="w-5 h-5 text-orange-400"></i></div><span class="status chip"></span></div><h3 class="name font-extrabold text-lg mb-1 text-white"></h3><div class="text-xs text-slate-400 flex gap-3 mb-5"><span><i data-lucide="clock" class="w-3.5 h-3.5 inline mr-1"></i><span class="time"></span> mnt</span><span><i data-lucide="history" class="w-3.5 h-3.5 inline mr-1"></i><span class="attempts"></span> kali</span></div><button class="action btn-primary w-full shadow-none"></button>`;
+        return card;
+      },(card,pkg)=>{
+        const count=attempts(pkg.__backendId,user.username),left=pkg.max_attempts-count,canTake=left>0;
+        card.querySelector(".name").textContent=pkg.package_name; card.querySelector(".time").textContent=pkg.total_time; card.querySelector(".attempts").textContent=pkg.max_attempts;
+        const status=card.querySelector(".status"); status.textContent=canTake?`${left} Kesempatan`:"Selesai"; status.className=`status chip ${canTake?"":"opacity-60"}`;
+        const btn=card.querySelector(".action"); btn.textContent=canTake?"Kerjakan Ujian":"Lihat Hasil"; btn.className=`action w-full shadow-none ${canTake?"btn-primary":"btn-ghost"}`;
+        
+        card.onclick=()=>{
+          if(!canTake){
+            const res=results().sort((a,b)=>new Date(b.completed_at)-new Date(a.completed_at)).find(r=>r.package_id===pkg.__backendId&&r.username.toLowerCase()===user.username.toLowerCase());
+            if(res)showResult(res); return;
+          }
+          state.pendingPackage = pkg;
+          $("start-modal-details").innerHTML = `<div class="flex justify-between border-b border-slate-800 pb-2 mb-2"><span class="text-slate-400">Paket Ujian:</span><strong class="text-white">${pkg.package_name}</strong></div><div class="flex justify-between border-b border-slate-800 pb-2 mb-2"><span class="text-slate-400">Total Waktu:</span><strong class="text-white">${pkg.total_time} Menit</strong></div><div class="flex justify-between"><span class="text-slate-400">Sisa Kesempatan:</span><strong class="text-white">${left} Kali</strong></div>`;
+          $("start-modal").classList.add("open");
+        };
+      });
+      $("student-package-empty").classList.toggle("hidden",myPackages.length>0);
+      const latest=results().sort((a,b)=>new Date(b.completed_at)-new Date(a.completed_at)).find(r=>r.username.toLowerCase()===user.username.toLowerCase());
+      if(latest){
+        $("latest-result-card").classList.remove("hidden");
+        const sc=overall(latest); $("latest-score").textContent=sc; $("latest-score-ring").style.setProperty("--score",sc);
+        $("latest-package-name").textContent=latest.package_name; $("latest-result-date").textContent=formatDate(latest.completed_at);
+        $("view-latest-result").onclick=()=>showResult(latest);
+      }else{ $("latest-result-card").classList.add("hidden") }
+      lucide.createIcons();
+    }
+
+    function initExam(pkg){
+        const now = Date.now();
+        state.exam = {
+            pkg,
+            endTime: now + (pkg.total_time * 60 * 1000),
+            nextIntervalTime: now + (pkg.interval_time * 60 * 1000),
+            remainingSeconds: pkg.total_time * 60,
+            currentIntervalSeconds: pkg.interval_time * 60,
+            currentCol: 0,
+            currentRow: 0,
+            cols: [],
+            intervalCounts: [],
+            currentIntervalAnswers: 0,
+            totalCorrect: 0,
+            totalAnswers: 0,
+            // Variabel Tracker Optimalisasi Performa:
+            lastFocusedElements: [], 
+            lastTimeStr: "", 
+            isRed: false,
+            lastColRendered: -1
+        };
+        $("exam-package-name").textContent = pkg.package_name.toUpperCase();
+        $("koran-grid-container").innerHTML = "";
+        state.ending = false;
+        
+        const fragment = document.createDocumentFragment();
+        for(let i=0; i<30; i++) ensureColumnExists(i, fragment);
+        $("koran-grid-container").appendChild(fragment);
+        
+        $("start-modal").classList.remove("open");
+        view("exam-view");
+        updateTimeDisplay();
+        
+        requestAnimationFrame(() => {
+            updateActiveCell();
+        });
+        
+        if(state.timerId) clearInterval(state.timerId);
+        state.timerId = setInterval(examTick, 250); 
+        
+        document.removeEventListener("keydown", handleKeydown);
+        document.addEventListener("keydown", handleKeydown);
+        setupKeypad();
+    }
+
+    function ensureColumnExists(idx, parentNode = null) {
+        if(state.exam.cols[idx]) return;
+        const colDiv = document.createElement("div");
+        colDiv.className = "koran-col";
+        
+        const box = document.createElement("div");
+        box.className = "koran-active-box hidden";
+        colDiv.appendChild(box);
+        
+        const nums = [];
+        let htmlStr = "";
+        for(let r=0; r<60; r++){ 
+            const n = Math.floor(Math.random()*9)+1; 
+            nums.push(n);
+            htmlStr += `<div class="koran-digit">${n}</div>`;
+        }
+        colDiv.insertAdjacentHTML('beforeend', htmlStr);
+        
+        if (parentNode) parentNode.appendChild(colDiv);
+        else $("koran-grid-container").appendChild(colDiv);
+        
+        state.exam.cols[idx] = { el: colDiv, box, nums, answers: [] };
+    }
+
+    function updateActiveCell() {
+        if(!state.exam) return;
+        const c = state.exam.currentCol;
+        const r = state.exam.currentRow || 0;
+        
+        for(let i = c; i <= c + 15; i++) {
+            ensureColumnExists(i);
+        }
+        
+        $("lajur-info").textContent = `LAJUR: ${c+1}`;
+        
+        // OPTIMIZED: Menghapus kelas 'focused' dengan cepat dari memory, bukan mencari ke seluruh DOM
+        if (state.exam.lastFocusedElements.length > 0) {
+            state.exam.lastFocusedElements.forEach(el => el.classList.remove('focused'));
+            state.exam.lastFocusedElements = [];
+        }
+
+        // OPTIMIZED: Update layout kolom hanya jika kita benar-benar berpindah kolom 
+        if (state.exam.lastColRendered !== c) {
+            state.exam.cols.forEach((col, idx) => {
+                col.box.classList.add("hidden");
+                col.el.classList.toggle("active-col", idx === c);
+            });
+        }
+        
+        if(state.exam.cols[c]) {
+            const colData = state.exam.cols[c];
+            colData.box.classList.remove("hidden");
+            
+            const boxTop = r * 42 + 10;
+            colData.box.style.top = boxTop + "px"; 
+            
+            const digits = colData.el.querySelectorAll('.koran-digit');
+            
+            // OPTIMIZED: Tambah kelas dan simpan referensi elemen di memory untuk dihapus nanti
+            if(digits[r]) { 
+                digits[r].classList.add('focused'); 
+                state.exam.lastFocusedElements.push(digits[r]); 
+            }
+            if(digits[r+1]) { 
+                digits[r+1].classList.add('focused'); 
+                state.exam.lastFocusedElements.push(digits[r+1]); 
+            }
+            
+            const container = $("koran-grid-container");
+            const targetLeft = colData.el.offsetLeft - (container.clientWidth / 2) + (colData.el.offsetWidth / 2);
+            const targetTop = boxTop - (container.clientHeight / 2) + 42;
+            
+            // OPTIMIZED: Menghilangkan behavior 'smooth' untuk merespon ketikan super-cepat secara real-time tanpa delay antrean animasi
+            container.scrollTo({ 
+                left: Math.max(0, targetLeft), 
+                top: Math.max(0, targetTop), 
+                behavior: 'auto' 
+            });
+            
+            // OPTIMIZED: Memindahkan Keypad hanya ketika berpindah LAJUR, bukan perbaris/huruf, untuk cegah Layout Thrashing (kalkulasi DOM)
+            if(window.innerWidth > 767 && state.exam.lastColRendered !== c) {
+                const keypad = $("floating-keypad");
+                const rect = colData.el.getBoundingClientRect();
+                const keypadWidth = 220;
+                
+                let keypadLeft = rect.right + 25;
+                if (keypadLeft + keypadWidth > window.innerWidth - 20) {
+                    keypadLeft = Math.max(20, rect.left - keypadWidth - 25);
+                }
+                
+                // Keypad menetap sedikit di atas, nyaman untuk mata, tidak lompat-lompat tiap ganti baris
+                let keypadTop = Math.max(85, rect.top - 10);
+                
+                keypad.style.left = `${keypadLeft}px`;
+                keypad.style.top = `${keypadTop}px`;
+            }
+
+            state.exam.lastColRendered = c;
+        }
+    }
+
+    function submitAnswer(digit) {
+        if(!state.exam || state.ending) return;
+        const c = state.exam.currentCol;
+        const r = state.exam.currentRow;
+        const colData = state.exam.cols[c];
+        
+        if(r >= colData.nums.length - 1) return; 
+        
+        const n1 = colData.nums[r];
+        const n2 = colData.nums[r+1];
+        const sum = n1 + n2;
+        const expected = sum % 10;
+        const isCorrect = (digit === expected);
+        
+        const ansDiv = document.createElement("div");
+        ansDiv.className = `koran-answer ${isCorrect ? 'correct' : 'wrong'}`;
+        ansDiv.style.top = (r * 42 + 31) + "px"; 
+        ansDiv.textContent = digit;
+        colData.el.appendChild(ansDiv);
+        
+        colData.answers[r] = { digit, isCorrect };
+        
+        state.exam.totalAnswers++;
+        if(isCorrect) state.exam.totalCorrect++;
+        state.exam.currentIntervalAnswers++;
+        
+        state.exam.currentRow++;
+        if(state.exam.currentRow >= colData.nums.length - 1) {
+            moveNextColumn();
+        } else {
+            updateActiveCell();
+        }
+    }
+
+    function moveNextColumn() {
+        if(!state.exam || state.ending) return;
+        const colData = state.exam.cols[state.exam.currentCol];
+        const r = state.exam.currentRow;
+        if(r > 0 && r < colData.nums.length - 1) {
+             const line = document.createElement("div");
+             line.style.cssText = `position:absolute; width:100%; height:4px; background:#ef4444; top:${(r*42)+10}px; z-index:5; border-radius:2px;`;
+             colData.el.appendChild(line);
+        }
+
+        state.exam.currentCol++;
+        state.exam.currentRow = 0;
+        updateActiveCell();
+    }
+
+    function handleKeydown(e) {
+        if(!state.exam || state.ending) return;
+        if(e.key >= '0' && e.key <= '9') {
+            submitAnswer(parseInt(e.key, 10));
+        } else if(e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            moveNextColumn();
+        }
+    }
+
+    function setupKeypad() {
+        const btns = document.querySelectorAll('.keypad-btn');
+        btns.forEach(b => {
+            const clone = b.cloneNode(true);
+            b.parentNode.replaceChild(clone, b);
+        });
+        document.querySelectorAll('.keypad-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                submitAnswer(parseInt(btn.dataset.digit, 10));
+            });
+            btn.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                submitAnswer(parseInt(btn.dataset.digit, 10));
+            });
+        });
+    }
+
+    function examTick() {
+        if(!state.exam || state.ending) return;
+        
+        const now = Date.now();
+        state.exam.remainingSeconds = Math.ceil((state.exam.endTime - now) / 1000);
+        state.exam.currentIntervalSeconds = Math.ceil((state.exam.nextIntervalTime - now) / 1000);
+        
+        if(state.exam.currentIntervalSeconds <= 0) {
+            state.exam.intervalCounts.push(state.exam.currentIntervalAnswers);
+            state.exam.currentIntervalAnswers = 0;
+            state.exam.nextIntervalTime += (state.exam.pkg.interval_time * 60 * 1000);
+            moveNextColumn();
+        }
+        
+        updateTimeDisplay();
+        
+        if(state.exam.remainingSeconds <= 0) {
+            endExam();
+        }
+    }
+
+    function updateTimeDisplay() {
+        if(!state.exam) return;
+        const totalSecs = Math.max(0, state.exam.remainingSeconds);
+        const h = Math.floor(totalSecs / 3600);
+        const m = Math.floor((totalSecs % 3600) / 60).toString().padStart(2, '0');
+        const s = (totalSecs % 60).toString().padStart(2, '0');
+        
+        // OPTIMIZED: Diffing DOM, cegah pembaruan tag textContent setiap 250 milidetik yang memicu kalkulasi frame render
+        const newTimeStr = (h > 0) ? `${h.toString().padStart(2, '0')}:${m}:${s}` : `${m}:${s}`;
+        
+        if (state.exam.lastTimeStr !== newTimeStr) {
+            $("time-remaining").textContent = newTimeStr;
+            state.exam.lastTimeStr = newTimeStr;
+            
+            if (totalSecs <= 60 && !state.exam.isRed) {
+                $("time-remaining").classList.add("text-red-400");
+                state.exam.isRed = true;
+            } else if (totalSecs > 60 && state.exam.isRed) {
+                $("time-remaining").classList.remove("text-red-400");
+                state.exam.isRed = false;
+            }
+        }
+    }
+
+    async function endExam() {
+        if(state.ending) return;
+        state.ending = true;
+        clearInterval(state.timerId);
+        document.removeEventListener("keydown", handleKeydown);
+        
+        if(state.exam.currentIntervalAnswers > 0 || state.exam.remainingSeconds > 0) {
+             state.exam.intervalCounts.push(state.exam.currentIntervalAnswers);
+        }
+        
+        const intervals = state.exam.intervalCounts;
+        const totalAnswers = state.exam.totalAnswers;
+        const totalCorrect = state.exam.totalCorrect;
+        
+        let scoreSpeed = Math.min(100, Math.max(0, Math.round((totalAnswers / (state.exam.pkg.total_time * 60)) * 100))); 
+        if(scoreSpeed < 20) scoreSpeed = 20 + Math.floor(Math.random()*20);
+        
+        const scoreAcc = totalAnswers > 0 ? Math.round((totalCorrect / totalAnswers) * 100) : 0;
+        
+        let maxDev = 0;
+        for(let i=1; i<intervals.length; i++){
+            maxDev = Math.max(maxDev, Math.abs(intervals[i] - intervals[i-1]));
+        }
+        const avgAns = intervals.length > 0 ? totalAnswers / intervals.length : 1;
+        let scoreCons = Math.max(0, 100 - (maxDev / avgAns * 100));
+        if(isNaN(scoreCons)) scoreCons = 0;
+        
+        let endurance = 100;
+        if(intervals.length > 2) {
+             const firstHalf = intervals.slice(0, Math.floor(intervals.length/2)).reduce((a,b)=>a+b,0);
+             const secondHalf = intervals.slice(Math.floor(intervals.length/2)).reduce((a,b)=>a+b,0);
+             endurance = Math.max(0, 100 - Math.abs((firstHalf - secondHalf)/firstHalf * 100));
+        }
+
+        const rec = blank("result");
+        rec.username = state.currentUser.username;
+        rec.package_id = state.exam.pkg.__backendId;
+        rec.package_name = state.exam.pkg.package_name;
+        rec.score_speed = Math.round(scoreSpeed);
+        rec.score_accuracy = scoreAcc;
+        rec.score_consistency = Math.round(scoreCons);
+        rec.score_endurance = Math.round(endurance);
+        rec.interval_scores = intervals.join(",");
+        rec.completed_at = new Date().toISOString();
+        
+        toast("Waktu Habis! Menyimpan hasil...");
+        await window.dataSdk.create(rec);
+        state.exam = null;
+        showResult(rec);
+    }
+    
+    function showResult(r){
+      $("result-package-name").textContent=r.package_name;
+      const sc=overall(r);
+      $("overall-score").textContent=sc;
+      $("score-speed").textContent=r.score_speed; $("ring-speed").style.setProperty("--score",r.score_speed);
+      $("score-accuracy").textContent=r.score_accuracy; $("ring-accuracy").style.setProperty("--score",r.score_accuracy);
+      $("score-consistency").textContent=r.score_consistency; $("ring-consistency").style.setProperty("--score",r.score_consistency);
+      $("score-endurance").textContent=r.score_endurance; $("ring-endurance").style.setProperty("--score",r.score_endurance);
+      
+      let summary="Kandidat menyelesaikan tes dengan performa stabil.";
+      if(sc>=85)summary="Luar Biasa! Rekomendasi prioritas, performa kerja sangat tinggi dan tahan tekanan.";
+      else if(sc>=70)summary="Baik. Kandidat memiliki performa yang solid dan memenuhi standar.";
+      else if(sc<50)summary="Kurang. Kandidat rentan terhadap tekanan kerja berulang.";
+      $("result-summary").textContent=summary;
+      
+      const arr=r.interval_scores?r.interval_scores.split(",").map(Number):[];
+      const max=Math.max(10,Math.max(...arr)*1.2);
+      const svg=$("performance-chart");svg.innerHTML="";
+      const w=720,h=320,pad=40,yRange=h-pad*2,xStep=(w-pad*2)/Math.max(1,arr.length-1);
+      
+      for(let i=0;i<=4;i++){
+        const y=pad+(yRange/4)*i;
+        svg.innerHTML+=`<line x1="${pad}" y1="${y}" x2="${w-pad}" y2="${y}" class="chart-grid"></line><text x="${pad-10}" y="${y+4}" font-size="12" fill="#64748b" text-anchor="end">${Math.round(max-(max/4)*i)}</text>`;
+      }
+      if(arr.length>0){
+        const pts=arr.map((v,i)=>`${pad+i*xStep},${h-pad-(v/max)*yRange}`);
+        svg.innerHTML+=`<path d="M ${pad},${h-pad} L ${pts.join(" L ")} L ${pad+(arr.length-1)*xStep},${h-pad} Z" class="chart-area"></path>`;
+        svg.innerHTML+=`<polyline points="${pts.join(" ")}" class="chart-line"></polyline>`;
+        arr.forEach((v,i)=>svg.innerHTML+=`<circle cx="${pad+i*xStep}" cy="${h-pad-(v/max)*yRange}" r="6" class="chart-dot"></circle>`);
+      }
+      
+      const list=$("advice-list");list.innerHTML="";
+      const adv=[];
+      if(r.score_speed>=80)adv.push({i:"zap",t:"Kecepatan Sangat Baik",d:"Mampu menyelesaikan tugas bervolume tinggi dalam waktu singkat."});
+      else if(r.score_speed<=50)adv.push({i:"snail",t:"Perlu Peningkatan Tempo",d:"Kecepatan kerja cenderung lambat, berpotensi menunda deadline."});
+      
+      if(r.score_accuracy>=95)adv.push({i:"target",t:"Ketelitian Akurat",d:"Sangat jarang melakukan kesalahan, cocok untuk tugas detail."});
+      else adv.push({i:"alert-triangle",t:"Evaluasi Ketelitian",d:"Terdeteksi beberapa kesalahan, butuh pengecekan ulang dalam bekerja."});
+      
+      if(r.score_consistency>=75)adv.push({i:"activity",t:"Stabilitas Baik",d:"Ritme kerja ajeg, tidak mudah terdistraksi."});
+      else adv.push({i:"trending-down",t:"Emosi/Fokus Fluktuatif",d:"Performa grafik tidak stabil, indikasi mudah terpengaruh distraksi/mood."});
+      
+      adv.forEach(a=>{list.innerHTML+=`<div class="flex gap-4 p-4 rounded-xl border border-slate-800 bg-slate-900"><div class="w-10 h-10 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 grid place-items-center flex-shrink-0"><i data-lucide="${a.i}" class="w-5 h-5"></i></div><div><h4 class="font-bold text-white text-sm">${a.t}</h4><p class="text-xs text-slate-400 mt-1">${a.d}</p></div></div>`});
+      lucide.createIcons(); view("result-view");
+    }
+
+    window.handleLoginSubmit = function(e, targetRole) {
+      e.preventDefault();
+      const s = settings();
+      
+      if(targetRole === "admin") {
+        const u = $("admin-username-input").value.trim();
+        const p = $("admin-password-input").value.trim();
+        if(u === (s?.username || DEFAULTS.admin_username) && p === (s?.password || DEFAULTS.admin_password)) {
+          state.currentUser = { role: "admin", username: u };
+          toast("Selamat datang, Admin.");
+          $("admin-username").textContent = u;
+          view("admin-view");
+        } else {
+          toast("Username atau password Admin salah.", "error");
+        }
+      } else {
+        const u = $("username-input").value.trim();
+        const p = $("password-input").value.trim();
+        const user = users().find(x => x.username.toLowerCase() === u.toLowerCase() && x.password === p);
+        if(user) {
+          state.currentUser = user;
+          toast("Selamat datang, " + user.username + ".");
+          renderStudent();
+          view("student-view");
+        } else {
+          toast("Username atau password Siswa salah.", "error");
+        }
+      }
+    };
+
+    document.querySelectorAll(".admin-tab").forEach(tab => {
+        tab.onclick = () => {
+            document.querySelectorAll(".admin-tab").forEach(t => t.setAttribute("aria-selected", "false"));
+            tab.setAttribute("aria-selected", "true");
+            document.querySelectorAll(".admin-panel").forEach(p => p.classList.remove("active"));
+            $(tab.dataset.panel).classList.add("active");
+        };
+    });
+
+    document.querySelectorAll("[data-action='logout']").forEach(btn => {
+        btn.onclick = () => { state.currentUser = null; view("login-view"); };
+    });
+
+    $("back-dashboard").onclick = () => {
+        if (state.currentUser?.role === "admin") view("admin-view");
+        else view("student-view");
+    };
+
+    $("cancel-start").onclick = () => { $("start-modal").classList.remove("open"); state.pendingPackage = null; };
+    
+    $("confirm-start").onclick = () => {
+        if(state.pendingPackage) {
+            initExam(state.pendingPackage);
+        }
+    };
+
+    $("close-detail-panel").onclick = () => $("result-detail-panel").classList.add("hidden");
+
+    $("package-form").onsubmit = async e => {
+      e.preventDefault();
+      loading($("save-package"), true);
+      const pkg = blank("package");
+      if(state.editingPackageId) pkg.__backendId = state.editingPackageId;
+      pkg.package_name = $("package-name").value.trim();
+      pkg.total_time = Number($("total-time").value);
+      pkg.interval_time = Number($("interval-time").value);
+      pkg.max_attempts = Number($("max-attempts").value);
+      pkg.assigned_to = $("assign-all").checked ? "*" : [...document.querySelectorAll("#student-checklist input:checked")].map(i => i.value).join(" | ");
+      
+      let res = state.editingPackageId ? await window.dataSdk.update(pkg) : await window.dataSdk.create(pkg);
+      loading($("save-package"), false);
+      if(res.isOk) {
+         toast("Paket disimpan."); $("package-form").reset();
+         state.editingPackageId = null; $("cancel-package-edit").classList.add("hidden");
+         $("package-form-heading").textContent = "Buat Paket Soal";
+      } else toast("Gagal menyimpan.", "error");
+    };
+
+    $("cancel-package-edit").onclick = () => {
+      $("package-form").reset(); state.editingPackageId = null;
+      $("cancel-package-edit").classList.add("hidden"); $("package-form-heading").textContent = "Buat Paket Soal";
+    };
+
+    $("assign-all").onchange = e => {
+      const disabled = e.target.checked;
+      document.querySelectorAll("#student-checklist input").forEach(i => i.disabled = disabled);
+    };
+
+    $("student-form").onsubmit = async e => {
+       e.preventDefault();
+       loading($("save-student"), true);
+       const u = blank("user"); u.role = "student";
+       u.username = $("new-student-name").value.trim();
+       u.password = $("new-student-password").value.trim();
+       const editId = $("edit-student-id").value;
+       if(editId) u.__backendId = editId;
+       
+       let res = editId ? await window.dataSdk.update(u) : await window.dataSdk.create(u);
+       loading($("save-student"), false);
+       if(res.isOk) {
+          toast("Siswa disimpan."); $("student-form").reset();
+          $("edit-student-id").value = ""; $("cancel-student").classList.add("hidden");
+       } else toast("Gagal menyimpan.", "error");
+    };
+
+    $("cancel-student").onclick = () => {
+       $("student-form").reset(); $("edit-student-id").value = ""; $("cancel-student").classList.add("hidden");
+    };
+
+    $("settings-form").onsubmit = async e => {
+       e.preventDefault();
+       loading($("save-settings"), true);
+       let s = settings() || blank("settings");
+       if(!s.__backendId) s.type = "settings";
+       s.username = $("settings-admin-name").value.trim();
+       s.password = $("settings-admin-password").value.trim();
+       s.site_title = $("settings-title").value.trim();
+       s.site_subtitle = $("settings-subtitle").value.trim();
+       
+       const file = $("settings-logo-file").files[0];
+       if(file) {
+          const reader = new FileReader();
+          reader.onload = async ev => { s.logo_url = ev.target.result; await finishSaveSettings(s); };
+          reader.readAsDataURL(file);
+       } else await finishSaveSettings(s);
+    };
+
+    async function finishSaveSettings(s) {
+       let res = s.__backendId ? await window.dataSdk.update(s) : await window.dataSdk.create(s);
+       loading($("save-settings"), false);
+       if(res.isOk) toast("Pengaturan disimpan.");
+       else toast("Gagal menyimpan.", "error");
+    }
+
+    $("delete-selected-results").onclick = async e => {
+      if(!confirm("Anda yakin ingin menghapus hasil terpilih secara permanen?")) return;
+      const checked = document.querySelectorAll(".result-item-check:checked");
+      loading(e.currentTarget, true);
+      for (let chk of checked) {
+         const r = results().find(x => x.__backendId === chk.dataset.id);
+         if (r) await window.dataSdk.delete(r);
+      }
+      loading(e.currentTarget, false);
+      toast("Hasil terpilih dihapus.");
+    };
+
+    $("delete-all-results").onclick = async e => {
+      if(!confirm("Anda yakin ingin menghapus SEMUA data hasil ujian secara permanen?")) return;
+      loading(e.currentTarget, true);
+      for (let r of results()) await window.dataSdk.delete(r);
+      loading(e.currentTarget, false);
+      toast("Semua hasil dihapus.");
+    };
+
+    if($("select-all-results")) {
+      $("select-all-results").onchange = e => {
+         const isChecked = e.target.checked;
+         document.querySelectorAll(".result-item-check").forEach(chk => chk.checked = isChecked);
+         updateDeleteSelectedBtn();
+      };
+    }
+
+    window.dataSdk.init({
+      onDataChanged: (docs) => {
+        state.records = docs;
+        renderAll();
+      }
+    });
+  </script>
+ </body>
+</html>
