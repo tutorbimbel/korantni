@@ -26,7 +26,7 @@
       --danger: #ef4444;
     }
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    /* Dihapus scroll-behavior: smooth agar respons halaman super cepat tanpa delay */
     body{margin:0;font-family:"DM Sans",sans-serif;color:var(--white);background-color:var(--black);overflow-x:hidden}
     button,input,select{font:inherit}
     button{touch-action:manipulation}
@@ -43,13 +43,12 @@
     .tactical:before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to right,#000,transparent)}
     .tactical:after{content:"";position:absolute;z-index:-1;width:340px;height:340px;right:-150px;bottom:-150px;border:1px solid rgba(249,115,22,.25);border-radius:50%;box-shadow:0 0 0 42px rgba(249,115,22,.03),0 0 0 84px rgba(249,115,22,.015)}
     
-    /* Background Login Overlay */
+    /* Background Login Overlay - dihapus fixed attachment agar performa scroll cepat di hp */
     .login-overlay{
         position:absolute;inset:0;z-index:0;
         background-color:var(--black);
         background-size:cover !important;
         background-position:center !important;
-        background-attachment:fixed !important;
         transition: background-image 0.5s ease-in-out;
     }
     
@@ -85,8 +84,8 @@
     .score-ring:after{content:"";position:absolute;inset:8px;border-radius:50%;background:var(--navy-light)}
     .score-ring strong{position:relative;z-index:1;font-size:23px;color:var(--white)}
     
-    /* Koran Grid & Auto-tracking Keypad Styling */
-    .exam-bg{min-height:calc(100 * min(var(--vh,1vh),1vh));background:var(--black); color: var(--white);}
+    /* Koran Grid & Auto-tracking Keypad Styling (Putih Terang) */
+    .exam-bg{min-height:calc(100 * min(var(--vh,1vh),1vh));background:#ffffff; color: #0f172a;}
     .exam-topbar{background:var(--navy); color:var(--white); padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--orange); position: sticky; top: 0; z-index: 100;}
     .koran-grid-container {
       display: flex; gap: 40px; overflow-x: auto; overflow-y: auto; padding: 30px 40px 240px 40px; width: 100%; height: calc(100vh - 68px);
@@ -94,24 +93,24 @@
     }
     .koran-col {
       position: relative; padding-top: 10px; width: 60px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center;
-      border-right: 1px dashed var(--line);
+      border-right: 1px dashed #cbd5e1;
     }
     .koran-col.active-col { border-right: 1px dashed var(--orange); background: linear-gradient(180deg, rgba(249,115,22,0.05) 0%, transparent 100%); }
     
     .koran-digit { 
-        font-size: 24px; font-weight: 800; color: var(--muted); height: 42px; line-height: 42px; width: 100%; text-align: center; z-index: 2; position: relative;
+        font-size: 24px; font-weight: 800; color: #94a3b8; height: 42px; line-height: 42px; width: 100%; text-align: center; z-index: 2; position: relative;
         transition: opacity 0.1s ease, transform 0.1s ease, color 0.1s ease; /* OPTIMIZED: Faster transition */
-        opacity: 0.3;
+        opacity: 0.8;
     }
     .koran-digit.focused { 
         opacity: 1; 
-        color: var(--white); 
+        color: #0f172a; 
         transform: scale(1.15); 
     }
     
     .koran-answer { position: absolute; left: 40px; font-size: 17px; font-weight: 800; height: 42px; line-height: 42px; display: flex; align-items: center; z-index: 3;}
-    .koran-answer.correct { color: #10b981; }
-    .koran-answer.wrong { color: #ef4444; }
+    .koran-answer.correct { color: #059669; }
+    .koran-answer.wrong { color: #dc2626; }
     
     .koran-active-box { 
         position: absolute; 
@@ -121,10 +120,11 @@
         height: 84px; 
         border: 3px solid var(--orange); 
         border-radius: 10px; 
-        background: rgba(249, 115, 22, 0.15); 
+        background: rgba(249, 115, 22, 0.1); 
         z-index: 1; 
         transition: top 0.1s ease-out; /* OPTIMIZED: Snappier transition */
-        box-shadow: 0 4px 16px rgba(249, 115, 22, 0.35); 
+        box-shadow: 0 4px 16px rgba(249, 115, 22, 0.2);
+        will-change: top, left;
     }
     
     #floating-keypad {
@@ -132,6 +132,7 @@
         background: var(--navy-light); border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.6); width: 220px; overflow: hidden;
         border: 1px solid var(--line); touch-action: none;
         transition: top 0.15s ease-out, left 0.15s ease-out;
+        will-change: top, left;
     }
     .keypad-header {
         background: var(--orange); color: white; padding: 8px; text-align: center; font-size: 11px; font-weight: 800; letter-spacing: 0.1em;
@@ -162,7 +163,8 @@
  </head>
  <body data-template-id="__page-root">
   <div class="app-shell w-full">
-   <!-- VIEW: LOGIN -->
+   
+   <!-- VIEW: LOGIN SISWA -->
    <section id="login-view" class="view login-view active relative tactical w-full py-8 px-4" aria-labelledby="login-title">
     <div class="login-overlay absolute inset-0 z-0"></div>
     
@@ -171,8 +173,8 @@
       <div class="flex flex-col items-center text-center text-white mb-6">
         <img id="login-logo" loading="lazy" class="w-[80px] h-[80px] object-cover rounded-2xl bg-white border border-white/20 shadow-2xl mb-4" alt="Logo Aplikasi">
         <span class="canva-tag inline-flex rounded-full px-3 py-1 eyebrow bg-orange-500/20 text-orange-400 mb-2 text-xs border border-orange-500/30 tracking-[.25em]">Welcome to</span>
-        <h1 id="login-title" class="canva-text font-extrabold text-2xl md:text-3xl text-white leading-tight"></h1>
-        <p id="login-subtitle" class="canva-text mt-2 text-slate-300 text-xs md:text-sm max-w-[320px]"></p>
+        <h1 class="login-title-dyn canva-text font-extrabold text-2xl md:text-3xl text-white leading-tight"></h1>
+        <p class="login-subtitle-dyn canva-text mt-2 text-slate-300 text-xs md:text-sm max-w-[320px]"></p>
       </div>
     </div>
 
@@ -199,27 +201,52 @@
       </main>
     </div>
 
-    <!-- Bagian Bawah Paling Bawah: Login Admin Ringkas/Kecil -->
-    <div class="relative z-10 w-full max-w-md pb-2 mt-6">
-      <details class="group bg-slate-900/80 border border-slate-800 rounded-xl overflow-hidden backdrop-blur-md transition-all">
-        <summary class="flex items-center justify-between px-4 py-2.5 text-xs font-semibold text-slate-400 cursor-pointer hover:text-white hover:bg-slate-800/50 select-none">
-          <span class="flex items-center gap-2"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-orange-500"></i> Akses Portal Admin</span>
-          <i data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform group-open:rotate-180"></i>
-        </summary>
-        <div class="p-4 border-t border-slate-800 bg-slate-950/60">
-          <form id="login-form-admin" onsubmit="handleLoginSubmit(event, 'admin')" class="space-y-3">
-            <div>
-              <label class="block text-[11px] font-medium text-slate-400 mb-1" for="admin-username-input">Username Admin</label>
-              <input id="admin-username-input" class="field text-xs py-2" required placeholder="Username admin">
-            </div>
-            <div>
-              <label class="block text-[11px] font-medium text-slate-400 mb-1" for="admin-password-input">Password Admin</label>
-              <input id="admin-password-input" type="password" class="field text-xs py-2" required placeholder="Password admin">
-            </div>
-            <button type="submit" class="btn-accent w-full text-xs py-2 mt-1">Masuk Administrator</button>
-          </form>
+    <!-- Tombol Admin Mengambang di Kanan Bawah -->
+    <div class="fixed bottom-5 right-5 z-50">
+      <button onclick="view('admin-login-view')" class="flex items-center gap-2 bg-slate-900/90 border border-slate-700 px-5 py-3 rounded-full text-xs font-bold text-slate-300 hover:text-white hover:bg-slate-800 hover:border-orange-500 transition-all shadow-2xl backdrop-blur-md">
+        <i data-lucide="shield-check" class="w-4 h-4 text-orange-500"></i> Login Admin
+      </button>
+    </div>
+   </section>
+
+   <!-- VIEW: LOGIN ADMIN (Halaman Khusus Admin) -->
+   <section id="admin-login-view" class="view login-view relative tactical w-full py-8 px-4" aria-labelledby="admin-login-title">
+    <div class="login-overlay absolute inset-0 z-0"></div>
+    
+    <!-- Bagian Atas / Header Login -->
+    <div class="relative z-10 w-full max-w-md flex flex-col items-center justify-center pt-4">
+      <div class="flex flex-col items-center text-center text-white mb-6">
+        <img id="admin-login-logo" loading="lazy" class="w-[80px] h-[80px] object-cover rounded-2xl bg-white border border-white/20 shadow-2xl mb-4" alt="Logo Aplikasi">
+        <span class="canva-tag inline-flex rounded-full px-3 py-1 eyebrow bg-orange-500/20 text-orange-400 mb-2 text-xs border border-orange-500/30 tracking-[.25em]">Portal Pengelola</span>
+        <h1 class="login-title-dyn canva-text font-extrabold text-2xl md:text-3xl text-white leading-tight"></h1>
+        <p class="login-subtitle-dyn canva-text mt-2 text-slate-300 text-xs md:text-sm max-w-[320px]"></p>
+      </div>
+    </div>
+
+    <div class="relative z-10 w-full max-w-md my-auto">
+      <main class="glass w-full rounded-[20px] p-6 md:p-8 shadow-2xl border border-orange-500/30">
+        <div class="flex items-center justify-between mb-5">
+          <span class="chip"><i data-lucide="shield-check" class="w-4 h-4"></i> ADMINISTRATOR</span> 
+          <span class="w-3 h-3 rounded-full bg-orange-500 ring-4 ring-orange-500/20"></span>
         </div>
-      </details>
+        
+        <h2 class="canva-text font-extrabold text-xl text-white">Masuk Administrator</h2>
+        <p class="canva-text mt-1 mb-6 text-xs text-slate-400">Silakan masukkan kredensial akses admin Anda.</p>
+        
+        <form id="login-form-admin" onsubmit="handleLoginSubmit(event, 'admin')">
+          <label class="canva-text block text-xs font-bold mb-1.5 text-slate-300" for="admin-username-input">Username Admin</label> 
+          <input id="admin-username-input" class="canva-input field mb-4" required placeholder="Ketik username admin..."> 
+          
+          <label class="canva-text block text-xs font-bold mb-1.5 text-slate-300" for="admin-password-input">Password Admin</label> 
+          <input id="admin-password-input" type="password" class="canva-input field mb-6" required placeholder="Ketik password admin..."> 
+
+          <button type="submit" class="canva-button btn-accent border border-orange-500 w-full py-3">Akses Dashboard Pusat</button>
+        </form>
+
+        <button type="button" onclick="view('login-view')" class="mt-4 flex items-center justify-center gap-2 text-xs text-slate-400 hover:text-white transition-colors w-full p-2">
+            <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Kembali ke Login Siswa
+        </button>
+      </main>
     </div>
    </section>
 
@@ -465,7 +492,7 @@
     </main>
    </section>
 
-   <!-- VIEW: EXAM -->
+   <!-- VIEW: EXAM (Latar Belakang Putih) -->
    <section id="exam-view" class="view exam-bg relative">
     <header class="exam-topbar">
       <div class="flex flex-col">
@@ -597,7 +624,6 @@
     const analytics = getAnalytics(app);
     const db = getFirestore(app);
 
-    // Struktur Penyimpanan Terorganisir pada Firestore
     window.dataSdk = {
       init: async (h) => {
         try { onSnapshot(collection(db, "koran_garuda_data"), (s) => h.onDataChanged(s.docs.map(d => ({ __backendId: d.id, ...d.data() })))); return { isOk: true }; } 
@@ -611,11 +637,14 @@
     const DEFAULTS={title:"Tes Psikologi Koran TNI",subtitle:"Simulasi Tes Kraepelin/Pauli terukur untuk menilai kecepatan, ketelitian, keajegan, dan daya tahan.",logo:"https://images.pexels.com/photos/163443/war-desert-guns-gunshow-163443.jpeg?auto=compress&cs=tinysrgb&w=400", admin_username:"aam14", admin_password:"1234"};
     const state={records:[],currentUser:null,pendingPackage:null,editingPackageId:null,latestResult:null,exam:null,timerId:null,ending:false,pendingLogo:""};
     const $=id=>document.getElementById(id);
-    const views=["login-view","admin-view","student-view","exam-view","result-view"];
+    const views=["login-view","admin-login-view","admin-view","student-view","exam-view","result-view"];
     
     function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]))}
     function toast(msg,type="success"){const el=$("toast");el.textContent=msg;el.className=`toast ${type==="error"?"error":""} show`;clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove("show"),3200)}
+    
     function view(id){views.forEach(v=>$(v).classList.toggle("active",v===id));if(id!=='exam-view')window.scrollTo({top:0,behavior:"smooth"})}
+    window.view = view; // PERBAIKAN: Ekspos fungsi view ke global object agar dapat diakses dari onclick pada HTML
+    
     function loading(b,on){b.disabled=on;if(on){b.dataset.old=b.innerHTML;b.innerHTML='<i data-lucide="loader-circle" class="w-4 h-4 loading"></i><span>Memproses...</span>'}else if(b.dataset.old){b.innerHTML=b.dataset.old;delete b.dataset.old}lucide.createIcons()}
     
     function blank(type){return{type,username:"",password:"",role:"",package_id:"",package_name:"",total_time:0,interval_time:0,max_attempts:0,assigned_to:"",score_speed:0,score_accuracy:0,score_endurance:0,score_consistency:0,score_stability:0,interval_scores:"",completed_at:"",logo_url:"",site_title:"",site_subtitle:""}}
@@ -637,16 +666,24 @@
       $("settings-admin-name").value=i.admin_user; $("settings-admin-password").value=i.admin_pass;
       $("settings-title").value=i.title; $("settings-subtitle").value=i.subtitle;
       $("logo-preview").src=i.logo;
-      if (document.querySelector('#login-title')) document.querySelector('#login-title').textContent = i.title;
-      if (document.querySelector('#login-subtitle')) document.querySelector('#login-subtitle').textContent = i.subtitle;
-      ["login-logo","admin-logo","student-logo"].forEach(id=>{const img=$(id);if(s||!img.getAttribute("src"))img.src=i.logo;img.alt=`Logo ${i.title}`});
+      
+      document.querySelectorAll('.login-title-dyn').forEach(el => el.textContent = i.title);
+      document.querySelectorAll('.login-subtitle-dyn').forEach(el => el.textContent = i.subtitle);
+
+      ["login-logo","admin-login-logo","admin-logo","student-logo"].forEach(id=>{
+        const img=$(id);
+        if(img) {
+          if(s||!img.getAttribute("src"))img.src=i.logo;
+          img.alt=`Logo ${i.title}`;
+        }
+      });
       document.title=i.title;
       
-      const overlay = document.querySelector('.login-overlay');
-      if(overlay){
+      const overlays = document.querySelectorAll('.login-overlay');
+      overlays.forEach(overlay => {
           overlay.style.backgroundImage = `linear-gradient(180deg,rgba(5,8,17,.92) 0%,rgba(10,25,47,.95) 100%), url('${i.logo}')`;
           overlay.style.opacity = '0.96';
-      }
+      });
     }
 
     function renderAll(){
